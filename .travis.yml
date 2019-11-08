@@ -5,16 +5,16 @@ addons:
     sonarcloud:
         organization: "bogdan"
         token:
-            secure: "cdb0f4a6470f40be20d7286a12a87ca4918b3e9a"
+            secure: "1367ab99c7cac16bdd499839ed772ac06c0592cd"
             
 jdk:
   - oraclejdk8
        
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-
-
 # script:
 #   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-#   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=SoftServe-Social-Projects_GreenCity -DskipTests=true
+#   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Bogdan-Kuzenko_GreenCity -DskipTests=true
