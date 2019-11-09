@@ -100,25 +100,25 @@ public class FavoritePlaceServiceImplTest {
         favoritePlaceService.save(dto, userEmail);
     }
 
-    /**
-     * @author Zakhar Skaletskyi
-     */
-    @Test(expected = BadIdException.class)
-    public void saveBadPlaceIdTest() {
-        FavoritePlaceDto dto = new FavoritePlaceDto();
-        String userEmail = "email";
-        dto.setName("a");
-        dto.setPlaceId(1L);
-        FavoritePlace fp = new FavoritePlace();
-        fp.setName("a");
-        fp.setUser(new User());
-        fp.getUser().setEmail("setEmail()");
-        fp.setPlace(new Place());
-        fp.getPlace().setId(2L);
-        when(favoritePlaceDtoMapper.convertToEntity(any(FavoritePlaceDto.class))).thenReturn(fp);
-        when(placeService.existsById(any())).thenReturn(false);
-        favoritePlaceService.save(dto, userEmail);
-    }
+//     /**
+//      * @author Zakhar Skaletskyi
+//      */
+//     @Test(expected = BadIdException.class)
+//     public void saveBadPlaceIdTest() {
+//         FavoritePlaceDto dto = new FavoritePlaceDto();
+//         String userEmail = "email";
+//         dto.setName("a");
+//         dto.setPlaceId(1L);
+//         FavoritePlace fp = new FavoritePlace();
+//         fp.setName("a");
+//         fp.setUser(new User());
+//         fp.getUser().setEmail("setEmail()");
+//         fp.setPlace(new Place());
+//         fp.getPlace().setId(2L);
+//         when(favoritePlaceDtoMapper.convertToEntity(any(FavoritePlaceDto.class))).thenReturn(fp);
+//         when(placeService.existsById(any())).thenReturn(false);
+//         favoritePlaceService.save(dto, userEmail);
+//     }
 
     /**
      * @author Zakhar Skaletskyi
